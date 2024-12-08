@@ -1,0 +1,20 @@
+# define required packages
+_locale_packages:
+  default: []
+  Debian:
+  - locales
+  - locales-all
+  - tzdata
+locale_packages: "{{ _locale_packages[ansible_os_family] | default(_locale_packages['default']) }}"
+
+# define the configuration path
+_locale_config:
+  default: /etc/locale.conf
+  Debian: /etc/default/locale
+locale_config: "{{ _locale_config[ansible_os_family] | default(_locale_config['default']) }}"
+
+# define the handler command to update locales
+_locale_update:
+  default: localectl set-locale LANG={{ locale }}
+  Debian: update-locale LANG={{ locale }}
+locale_update: "{{ _locale_update[ansible_os_family] | default(_locale_update['default']) }}"

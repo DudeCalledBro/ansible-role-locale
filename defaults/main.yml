@@ -1,0 +1,9 @@
+# Desired System Locale (LANG)
+locale: "en_US.UTF-8"
+
+# Desired System Locale Time (LC_TIME)
+locale_time: "de_DE.UTF-8"
+
+# Desired System Timezone
+# Reference: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+locale_timezone: "Europe/Berlin"

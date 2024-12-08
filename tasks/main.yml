@@ -1,0 +1,15 @@
+- name: Install locale packages
+  ansible.builtin.package:
+    name: "{{ locale_packages }}"
+    state: present
+
+- name: Configure locale
+  ansible.builtin.template:
+    src: locale.conf.j2
+    dest: "{{ locale_config }}"
+    mode: 0644
+  notify: localectl update locale
+
+- name: Configure timezone
+  community.general.timezone:
+    name: "{{ locale_timezone }}"

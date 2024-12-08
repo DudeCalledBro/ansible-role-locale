@@ -1,0 +1,3 @@
+repository:
+  description: Setup locale on linux systems.
+  topics: ansible, ansible-galaxy, molecule, role

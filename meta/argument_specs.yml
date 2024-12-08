@@ -1,0 +1,6 @@
+argument_specs:
+  main:
+    short_description: locale
+    description: "Setup locale on linux systems."
+    author: dudecalledbro
+    options: {}
