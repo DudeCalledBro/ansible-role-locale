@@ -3,4 +3,13 @@ argument_specs:
     short_description: locale
     description: "Setup locale on linux systems."
     author: dudecalledbro
-    options: {}
+    options:
+      locale:
+        type: str
+        description: "Desired System Locale (LANG)"
+      locale_time:
+        type: str
+        description: "Desired System Locale Time (LC_TIME)"
+      locale_timezone:
+        type: str
+        description: "Desired System Timezone"
